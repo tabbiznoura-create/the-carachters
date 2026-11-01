@@ -1,31 +1,3 @@
-
-
-/* Radiant Pixel World: original sprite-based character lobby and restrained luminous RPG UI. */
-#modalShade{backdrop-filter:blur(7px) saturate(1.2)}
-#modal{border:2px solid #deb97d!important;box-shadow:0 25px 120px #020e1c,0 0 0 3px #567f9266,inset 0 0 25px #fff2bd11!important;background:linear-gradient(150deg,#192a43 0%,#233649 55%,#121c35 100%)!important}
-#modal h1,#modal h2{text-shadow:0 2px 4px #0007,0 0 22px #d9b78456}
-#modal .roster-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
-#modal .roster-head .lobby-title{font-family:Georgia,serif;color:#ffe6b0;font-size:clamp(22px,4vw,34px);font-weight:900;text-shadow:0 0 20px #deb97d55}
-#modal .roster-sub{font-size:12px;color:#b8d9e6;line-height:1.5;margin-bottom:12px}
-#modal .roster-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
-#modal .roster-card{display:flex;gap:6px;align-items:center;flex-direction:column;position:relative;min-height:170px;justify-content:center;padding:9px 4px!important;border:1px solid #b9b38c77;background:linear-gradient(160deg,#395b65db,#1a283fef 65%,#132136);border-radius:12px;color:#fff1d0;overflow:hidden;box-shadow:inset 0 1px #ffffff22,0 5px 16px #0006}
-#modal .roster-card:before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 50% 28%,#b2d8a12e,transparent 65%)}
-#modal .roster-card .slotno{position:absolute;top:6px;left:8px;font-size:10px;color:#f6d995a8}
-#modal .roster-card .slot-art{width:67px;height:84px;image-rendering:pixelated;object-fit:contain;filter:drop-shadow(0 5px 4px #0007)}
-#modal .roster-card .slot-name{font-size:13px;font-weight:800;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-#modal .roster-card .slot-job{font-size:10px;color:#accfdf}
-#modal .roster-card .slot-progress{font-size:10px;color:#e8d5a0}
-#modal .roster-card.empty{border-style:dashed;background:linear-gradient(155deg,#183045a8,#102338);color:#a5cfe0}
-#modal .roster-card.empty .plus{font-size:43px;color:#d7e4b9;font-weight:200;line-height:1}
-#modal .roster-card .slot-del{position:absolute;top:4px;right:4px;border:0;background:#101e33ab;color:#ffd5d5;border-radius:4px;font-size:10px;padding:3px 5px;z-index:2}
-#modal .roster-card:focus-visible,#modal .roster-card:hover{outline:2px solid #b4f0eb;box-shadow:0 0 20px #a5faf64d}
-#modal .lobby-help{margin-top:12px;color:#c7d8db;font-size:11px}
-#modal .creation-title{background:linear-gradient(90deg,#d8f0ed1c,#e4c68b1c);border:1px solid #e5c88b4d;padding:8px 12px;border-radius:10px}
-#modal #heroName{width:min(330px,100%);padding:10px;background:#ebf3f2;color:#102439;border-radius:7px;border:2px solid #ddbf7f}
-#logoutBtn,#logoutAccountBtn{border-color:#e5cfab88;background:linear-gradient(#4d6071,#23364d)}
-#modal .auth-form{display:grid;gap:12px;max-width:390px;margin:12px auto}#modal .auth-form input{width:100%;padding:12px;background:#eaf2f3;color:#142b40;border:1px solid #d6bb88;border-radius:8px;font-size:15px}#modal .auth-status{color:#ffcdad;font-weight:600;min-height:18px}#modal .auth-choice{display:flex;gap:9px;flex-wrap:wrap}#modal .account-tag{color:#d8ebff;font-size:12px}#modal .auth-note{font-size:12px;color:#c1d3df;line-height:1.5}
-@media(max-width:540px){#modal .roster-grid{gap:6px}#modal .roster-card{min-height:142px;padding:5px 1px!important}#modal .roster-card .slot-art{width:49px;height:65px}#modal .roster-card .slot-name{font-size:11px}#modal .roster-card .slot-job{font-size:9px}#modal .roster-card .slot-progress{font-size:9px}}
-@media(max-height:540px){#modal .roster-card{min-height:122px}#modal .roster-card .slot-art{height:45px;width:46px}}
 <!doctype html>
 <html lang="en">
 <head>
@@ -224,415 +196,47 @@
 
 
 /* Radiant Pixel World: original sprite-based character lobby and restrained luminous RPG UI. */
-
-/* =========================================
-   PREMIUM PIXEL ART RPG — CHARACTER LOBBY
-========================================= */
-
-/* Modal background */
-#modalShade {
-    backdrop-filter: blur(9px) saturate(1.25);
-    background: #07111dcc;
-}
-
-#modal {
-    border: 2px solid #d9b779 !important;
-    border-radius: 18px;
-    background:
-        radial-gradient(ellipse at 50% 0%, #49647755, transparent 55%),
-        linear-gradient(145deg, #192b43 0%, #22394b 48%, #101b30 100%) !important;
-
-    box-shadow:
-        0 30px 100px #020914e8,
-        0 0 0 1px #f5d99b44,
-        0 0 35px #d9b77922,
-        inset 0 1px 0 #ffffff25 !important;
-}
-
-/* Titles */
-#modal h1,
-#modal h2 {
-    color: #ffe7b4;
-    text-shadow:
-        0 2px 4px #0009,
-        0 0 12px #e6bd7755,
-        0 0 25px #d9b77933;
-}
-
-/* Character lobby header */
-#modal .roster-head {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    margin-bottom: 15px;
-}
-
-#modal .roster-head .lobby-title {
-    font-family: Georgia, serif;
-    color: #ffe5ad;
-    font-size: clamp(22px, 4vw, 35px);
-    font-weight: 900;
-    letter-spacing: 1px;
-    text-shadow:
-        0 2px 3px #0009,
-        0 0 18px #e7bd7555;
-}
-
-#modal .roster-sub {
-    font-size: 12px;
-    color: #c2dce8;
-    line-height: 1.6;
-    margin-bottom: 15px;
-}
-
-/* Character grid */
-#modal .roster-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 12px;
-}
-
-/* Character cards */
-#modal .roster-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 7px;
-
-    position: relative;
-    isolation: isolate;
-    overflow: hidden;
-
-    min-height: 180px;
-    padding: 12px 5px !important;
-
-    border: 1px solid #c6b17d99;
-    border-radius: 13px;
-
-    background:
-        radial-gradient(ellipse at 50% 25%, #a5d4b42b, transparent 65%),
-        linear-gradient(155deg, #405d68, #1b3046 60%, #101d32);
-
-    color: #fff0cd;
-
-    box-shadow:
-        inset 0 1px 0 #ffffff30,
-        inset 0 -12px 25px #07142666,
-        0 7px 18px #0007;
-
-    transition:
-        transform 0.25s ease,
-        border-color 0.25s ease,
-        box-shadow 0.25s ease,
-        filter 0.25s ease;
-}
-
-/* Golden light on cards */
-#modal .roster-card::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    pointer-events: none;
-
-    background:
-        radial-gradient(
-            circle at 50% 25%,
-            #f4d69a35,
-            transparent 65%
-        );
-
-    opacity: 0.8;
-}
-
-/* Decorative border */
-#modal .roster-card::after {
-    content: "";
-    position: absolute;
-    inset: 5px;
-    border: 1px solid #f0d69b20;
-    border-radius: 9px;
-    pointer-events: none;
-}
-
-/* Hover effect */
-#modal .roster-card:hover {
-    transform: translateY(-5px);
-    border-color: #f4d18a;
-
-    box-shadow:
-        0 0 0 1px #eac77b55,
-        0 0 20px #e7c17b55,
-        0 12px 25px #0009,
-        inset 0 1px 0 #ffffff44;
-
-    filter: brightness(1.12);
-}
-
-/* Slot number */
-#modal .roster-card .slotno {
-    position: absolute;
-    top: 8px;
-    left: 9px;
-    font-size: 10px;
-    color: #f5d99b;
-    text-shadow: 0 1px 3px #000;
-}
-
-/* Character artwork */
+#modalShade{backdrop-filter:blur(7px) saturate(1.2)}
+#modal{border:2px solid #deb97d!important;box-shadow:0 25px 120px #020e1c,0 0 0 3px #567f9266,inset 0 0 25px #fff2bd11!important;background:linear-gradient(150deg,#192a43 0%,#233649 55%,#121c35 100%)!important}
+#modal h1,#modal h2{text-shadow:0 2px 4px #0007,0 0 22px #d9b78456}
+#modal .roster-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
+#modal .roster-head .lobby-title{font-family:Georgia,serif;color:#ffe6b0;font-size:clamp(22px,4vw,34px);font-weight:900;text-shadow:0 0 20px #deb97d55}
+#modal .roster-sub{font-size:12px;color:#b8d9e6;line-height:1.5;margin-bottom:12px}
+#modal .roster-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
+#modal .roster-card{display:flex;gap:6px;align-items:center;flex-direction:column;position:relative;min-height:170px;justify-content:center;padding:9px 4px!important;border:1px solid #b9b38c77;background:linear-gradient(160deg,#395b65db,#1a283fef 65%,#132136);border-radius:12px;color:#fff1d0;overflow:hidden;box-shadow:inset 0 1px #ffffff22,0 5px 16px #0006}
+#modal .roster-card:before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 50% 28%,#b2d8a12e,transparent 65%)}
+#modal .roster-card .slotno{position:absolute;top:6px;left:8px;font-size:10px;color:#f6d995a8}
 #modal .roster-card .slot-art {
-    width: 72px;
-    height: 90px;
-
+    width: 67px;
+    height: 84px;
     object-fit: contain;
     image-rendering: pixelated;
-
     filter:
-        drop-shadow(0 5px 3px #0009)
-        drop-shadow(0 0 7px #d8c18a33);
-
-    transition:
-        transform 0.3s ease,
-        filter 0.3s ease;
+        drop-shadow(0 3px 2px #0008)
+        drop-shadow(0 0 7px #8de5d5aa);
+    transition: transform 0.25s ease, filter 0.25s ease;
 }
 
 #modal .roster-card:hover .slot-art {
-    transform: translateY(-4px) scale(1.06);
-
+    transform: scale(1.12);
     filter:
-        drop-shadow(0 7px 5px #000a)
-        drop-shadow(0 0 12px #f3d18b88);
+        drop-shadow(0 5px 4px #0009)
+        drop-shadow(0 0 12px #a5fff0cc);
 }
-
-/* Character name */
-#modal .roster-card .slot-name {
-    font-size: 13px;
-    font-weight: 800;
-    color: #fff0cc;
-    max-width: 100%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    text-shadow: 0 2px 4px #0009;
-}
-
-/* Character class */
-#modal .roster-card .slot-job {
-    font-size: 10px;
-    color: #b8d8e5;
-    letter-spacing: 0.5px;
-}
-
-/* Progress */
-#modal .roster-card .slot-progress {
-    font-size: 10px;
-    color: #f1d49a;
-}
-
-/* Empty character slot */
-#modal .roster-card.empty {
-    border: 1px dashed #9ebbc2aa;
-
-    background:
-        radial-gradient(circle, #7ca5ae22, transparent 70%),
-        linear-gradient(155deg, #1c394d, #102238);
-
-    color: #c2dce8;
-}
-
-#modal .roster-card.empty:hover {
-    border-color: #c5e7e8;
-    box-shadow: 0 0 18px #a5e5e855;
-}
-
-#modal .roster-card.empty .plus {
-    font-size: 46px;
-    color: #e4d3a5;
-    font-weight: 200;
-    line-height: 1;
-    text-shadow: 0 0 15px #e4d3a566;
-}
-
-/* Remove button */
-#modal .roster-card .slot-del {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    z-index: 2;
-
-    border: 1px solid #ffffff22;
-    background: #101e33dd;
-    color: #ffd5d5;
-
-    border-radius: 5px;
-    font-size: 10px;
-    padding: 4px 6px;
-
-    transition: background 0.2s ease;
-}
-
-#modal .roster-card .slot-del:hover {
-    background: #a53d4c;
-}
-
-/* Keyboard accessibility */
-#modal .roster-card:focus-visible {
-    outline: 2px solid #b4f0eb;
-    outline-offset: 3px;
-}
-
-/* Help text */
-#modal .lobby-help {
-    margin-top: 14px;
-    color: #c7d8db;
-    font-size: 11px;
-}
-
-/* Creation section */
-#modal .creation-title {
-    background:
-        linear-gradient(90deg, #d8f0ed20, #e4c68b25);
-
-    border: 1px solid #e5c88b66;
-    border-radius: 10px;
-    padding: 9px 13px;
-
-    color: #ffe7b4;
-    box-shadow: inset 0 1px 0 #ffffff22;
-}
-
-/* Hero name input */
-#modal #heroName {
-    width: min(330px, 100%);
-    padding: 11px;
-
-    background: #ebf3f2;
-    color: #102439;
-
-    border-radius: 7px;
-    border: 2px solid #ddbf7f;
-
-    box-shadow: 0 4px 12px #0004;
-}
-
-#modal #heroName:focus {
-    outline: none;
-    border-color: #ffe3a3;
-    box-shadow: 0 0 0 3px #e8c47b44;
-}
-
-/* Logout buttons */
-#logoutBtn,
-#logoutAccountBtn {
-    border: 1px solid #e5cfab88;
-    background: linear-gradient(180deg, #536c7d, #23364d);
-    box-shadow: 0 4px 10px #0005;
-    transition: filter 0.2s ease;
-}
-
-#logoutBtn:hover,
-#logoutAccountBtn:hover {
-    filter: brightness(1.2);
-}
-
-/* Authentication form */
-#modal .auth-form {
-    display: grid;
-    gap: 12px;
-    max-width: 390px;
-    margin: 12px auto;
-}
-
-#modal .auth-form input {
-    width: 100%;
-    padding: 12px;
-
-    background: #eaf2f3;
-    color: #142b40;
-
-    border: 1px solid #d6bb88;
-    border-radius: 8px;
-    font-size: 15px;
-}
-
-#modal .auth-form input:focus {
-    outline: none;
-    border-color: #ffe3a3;
-    box-shadow: 0 0 0 3px #e8c47b44;
-}
-
-#modal .auth-status {
-    color: #ffcdad;
-    font-weight: 600;
-    min-height: 18px;
-}
-
-#modal .auth-choice {
-    display: flex;
-    gap: 9px;
-    flex-wrap: wrap;
-}
-
-#modal .account-tag {
-    color: #d8ebff;
-    font-size: 12px;
-}
-
-#modal .auth-note {
-    font-size: 12px;
-    color: #c1d3df;
-    line-height: 1.5;
-}
-
-/* Responsive design */
-@media (max-width: 540px) {
-    #modal .roster-grid {
-        gap: 7px;
-    }
-
-    #modal .roster-card {
-        min-height: 145px;
-        padding: 6px 2px !important;
-    }
-
-    #modal .roster-card .slot-art {
-        width: 51px;
-        height: 67px;
-    }
-
-    #modal .roster-card .slot-name {
-        font-size: 11px;
-    }
-
-    #modal .roster-card .slot-job,
-    #modal .roster-card .slot-progress {
-        font-size: 9px;
-    }
-}
-
-@media (max-height: 540px) {
-    #modal .roster-card {
-        min-height: 122px;
-    }
-
-
-    #modal .roster-card .slot-art {
-        height: 45px;
-        width: 46px;
-    }
-}
-
-/* Respect reduced motion */
-@media (prefers-reduced-motion: reduce) {
-    #modal .roster-card,
-    #modal .roster-card .slot-art,
-    #logoutBtn,
-    #logoutAccountBtn {
-        transition: none;
-    }
-}
+#modal .roster-card .slot-name{font-size:13px;font-weight:800;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#modal .roster-card .slot-job{font-size:10px;color:#accfdf}
+#modal .roster-card .slot-progress{font-size:10px;color:#e8d5a0}
+#modal .roster-card.empty{border-style:dashed;background:linear-gradient(155deg,#183045a8,#102338);color:#a5cfe0}
+#modal .roster-card.empty .plus{font-size:43px;color:#d7e4b9;font-weight:200;line-height:1}
+#modal .roster-card .slot-del{position:absolute;top:4px;right:4px;border:0;background:#101e33ab;color:#ffd5d5;border-radius:4px;font-size:10px;padding:3px 5px;z-index:2}
+#modal .roster-card:focus-visible,#modal .roster-card:hover{outline:2px solid #b4f0eb;box-shadow:0 0 20px #a5faf64d}
+#modal .lobby-help{margin-top:12px;color:#c7d8db;font-size:11px}
+#modal .creation-title{background:linear-gradient(90deg,#d8f0ed1c,#e4c68b1c);border:1px solid #e5c88b4d;padding:8px 12px;border-radius:10px}
+#modal #heroName{width:min(330px,100%);padding:10px;background:#ebf3f2;color:#102439;border-radius:7px;border:2px solid #ddbf7f}
+#logoutBtn,#logoutAccountBtn{border-color:#e5cfab88;background:linear-gradient(#4d6071,#23364d)}
+#modal .auth-form{display:grid;gap:12px;max-width:390px;margin:12px auto}#modal .auth-form input{width:100%;padding:12px;background:#eaf2f3;color:#142b40;border:1px solid #d6bb88;border-radius:8px;font-size:15px}#modal .auth-status{color:#ffcdad;font-weight:600;min-height:18px}#modal .auth-choice{display:flex;gap:9px;flex-wrap:wrap}#modal .account-tag{color:#d8ebff;font-size:12px}#modal .auth-note{font-size:12px;color:#c1d3df;line-height:1.5}
+@media(max-width:540px){#modal .roster-grid{gap:6px}#modal .roster-card{min-height:142px;padding:5px 1px!important}#modal .roster-card .slot-art{width:49px;height:65px}#modal .roster-card .slot-name{font-size:11px}#modal .roster-card .slot-job{font-size:9px}#modal .roster-card .slot-progress{font-size:9px}}
+@media(max-height:540px){#modal .roster-card{min-height:122px}#modal .roster-card .slot-art{height:45px;width:46px}}
 
 
 /* v11 final visual polish: all browser-native, no external dependencies */
